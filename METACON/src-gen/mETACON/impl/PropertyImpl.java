@@ -96,6 +96,7 @@ public class PropertyImpl extends ElementImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getValue() {
 		return value;
 	}
@@ -105,6 +106,7 @@ public class PropertyImpl extends ElementImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setValue(String newValue) {
 		String oldValue = value;
 		value = newValue;
@@ -117,6 +119,7 @@ public class PropertyImpl extends ElementImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getType() {
 		return type;
 	}
@@ -126,6 +129,7 @@ public class PropertyImpl extends ElementImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setType(String newType) {
 		String oldType = type;
 		type = newType;
@@ -138,6 +142,7 @@ public class PropertyImpl extends ElementImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Concept getConcept() {
 		if (eContainerFeatureID() != METACONPackage.PROPERTY__CONCEPT)
 			return null;
@@ -159,6 +164,7 @@ public class PropertyImpl extends ElementImpl implements Property {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setConcept(Concept newConcept) {
 		if (newConcept != eInternalContainer()
 				|| (eContainerFeatureID() != METACONPackage.PROPERTY__CONCEPT && newConcept != null)) {

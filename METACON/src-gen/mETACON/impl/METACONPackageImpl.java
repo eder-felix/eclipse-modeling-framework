@@ -129,6 +129,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getElement() {
 		return elementEClass;
 	}
@@ -138,6 +139,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getElement_Name() {
 		return (EAttribute) elementEClass.getEStructuralFeatures().get(0);
 	}
@@ -147,6 +149,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getElement_Dictionary() {
 		return (EReference) elementEClass.getEStructuralFeatures().get(1);
 	}
@@ -156,6 +159,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getConcept() {
 		return conceptEClass;
 	}
@@ -165,6 +169,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getConcept_Vis() {
 		return (EAttribute) conceptEClass.getEStructuralFeatures().get(0);
 	}
@@ -174,6 +179,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getConcept_OwnedProperty() {
 		return (EReference) conceptEClass.getEStructuralFeatures().get(1);
 	}
@@ -183,6 +189,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getProperty() {
 		return propertyEClass;
 	}
@@ -192,6 +199,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProperty_Value() {
 		return (EAttribute) propertyEClass.getEStructuralFeatures().get(0);
 	}
@@ -201,6 +209,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EAttribute getProperty_Type() {
 		return (EAttribute) propertyEClass.getEStructuralFeatures().get(1);
 	}
@@ -210,6 +219,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getProperty_Concept() {
 		return (EReference) propertyEClass.getEStructuralFeatures().get(2);
 	}
@@ -219,6 +229,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EClass getDictionary() {
 		return dictionaryEClass;
 	}
@@ -228,6 +239,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EReference getDictionary_Element() {
 		return (EReference) dictionaryEClass.getEStructuralFeatures().get(0);
 	}
@@ -237,6 +249,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EEnum getVisibility() {
 		return visibilityEEnum;
 	}
@@ -246,6 +259,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public METACONFactory getMETACONFactory() {
 		return (METACONFactory) getEFactoryInstance();
 	}

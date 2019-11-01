@@ -103,6 +103,7 @@ public class METACONFactoryImpl extends EFactoryImpl implements METACONFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Concept createConcept() {
 		ConceptImpl concept = new ConceptImpl();
 		return concept;
@@ -113,6 +114,7 @@ public class METACONFactoryImpl extends EFactoryImpl implements METACONFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Property createProperty() {
 		PropertyImpl property = new PropertyImpl();
 		return property;
@@ -123,6 +125,7 @@ public class METACONFactoryImpl extends EFactoryImpl implements METACONFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Dictionary createDictionary() {
 		DictionaryImpl dictionary = new DictionaryImpl();
 		return dictionary;
@@ -155,6 +158,7 @@ public class METACONFactoryImpl extends EFactoryImpl implements METACONFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public METACONPackage getMETACONPackage() {
 		return (METACONPackage) getEPackage();
 	}

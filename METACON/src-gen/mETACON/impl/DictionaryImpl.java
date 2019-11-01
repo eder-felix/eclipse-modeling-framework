@@ -66,6 +66,7 @@ public class DictionaryImpl extends ElementImpl implements Dictionary {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Element> getElement() {
 		if (element == null) {
 			element = new EObjectContainmentWithInverseEList<Element>(Element.class, this,

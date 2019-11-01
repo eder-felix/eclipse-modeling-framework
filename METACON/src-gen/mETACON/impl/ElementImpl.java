@@ -76,6 +76,7 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public String getName() {
 		return name;
 	}
@@ -85,6 +86,7 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setName(String newName) {
 		String oldName = name;
 		name = newName;
@@ -97,6 +99,7 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Dictionary getDictionary() {
 		if (eContainerFeatureID() != METACONPackage.ELEMENT__DICTIONARY)
 			return null;
@@ -118,6 +121,7 @@ public abstract class ElementImpl extends MinimalEObjectImpl.Container implement
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setDictionary(Dictionary newDictionary) {
 		if (newDictionary != eInternalContainer()
 				|| (eContainerFeatureID() != METACONPackage.ELEMENT__DICTIONARY && newDictionary != null)) {

@@ -91,6 +91,7 @@ public class ConceptImpl extends ElementImpl implements Concept {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public Visibility getVis() {
 		return vis;
 	}
@@ -100,6 +101,7 @@ public class ConceptImpl extends ElementImpl implements Concept {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public void setVis(Visibility newVis) {
 		Visibility oldVis = vis;
 		vis = newVis == null ? VIS_EDEFAULT : newVis;
@@ -112,6 +114,7 @@ public class ConceptImpl extends ElementImpl implements Concept {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	public EList<Property> getOwnedProperty() {
 		if (ownedProperty == null) {
 			ownedProperty = new EObjectContainmentWithInverseEList<Property>(Property.class, this,
