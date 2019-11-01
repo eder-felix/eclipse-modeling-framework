@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/METACON/src-gen" creationIcons="false" editDirectory="/METACON.edit/src-gen"
+    editorDirectory="/METACON.editor/src-gen" modelPluginID="METACON" modelName="METACON"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>mETACON.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="METACON" disposableProviderFactory="true" ecorePackage="mETACON.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mETACON.ecore#//Visibility">
+      <genEnumLiterals ecoreEnumLiteral="mETACON.ecore#//Visibility/cp_public"/>
+      <genEnumLiterals ecoreEnumLiteral="mETACON.ecore#//Visibility/cp_private"/>
+    </genEnums>
+    <genClasses ecoreClass="mETACON.ecore#//Element">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Element/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mETACON.ecore#//Element/dictionary"/>
+    </genClasses>
+    <genClasses ecoreClass="mETACON.ecore#//Concept">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Concept/vis"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mETACON.ecore#//Concept/ownedProperty"/>
+    </genClasses>
+    <genClasses ecoreClass="mETACON.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Property/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Property/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mETACON.ecore#//Property/concept"/>
+    </genClasses>
+    <genClasses ecoreClass="mETACON.ecore#//Dictionary">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mETACON.ecore#//Dictionary/element"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
