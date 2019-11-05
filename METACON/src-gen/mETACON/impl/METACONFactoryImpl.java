@@ -63,6 +63,10 @@ public class METACONFactoryImpl extends EFactoryImpl implements METACONFactory {
 			return createProperty();
 		case METACONPackage.DICTIONARY:
 			return createDictionary();
+		case METACONPackage.ACTION:
+			return createAction();
+		case METACONPackage.PARAMETER:
+			return createParameter();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -129,6 +133,28 @@ public class METACONFactoryImpl extends EFactoryImpl implements METACONFactory {
 	public Dictionary createDictionary() {
 		DictionaryImpl dictionary = new DictionaryImpl();
 		return dictionary;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Action createAction() {
+		ActionImpl action = new ActionImpl();
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Parameter createParameter() {
+		ParameterImpl parameter = new ParameterImpl();
+		return parameter;
 	}
 
 	/**

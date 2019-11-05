@@ -150,13 +150,22 @@ public interface METACONPackage extends EPackage {
 	int CONCEPT__OWNED_PROPERTY = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Owned Action</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONCEPT__OWNED_ACTION = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Concept</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONCEPT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+	int CONCEPT_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Concept</em>' class.
@@ -296,6 +305,143 @@ public interface METACONPackage extends EPackage {
 	int DICTIONARY_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link mETACON.impl.ActionImpl <em>Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mETACON.impl.ActionImpl
+	 * @see mETACON.impl.METACONPackageImpl#getAction()
+	 * @generated
+	 */
+	int ACTION = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__NAME = ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Dictionary</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__DICTIONARY = ELEMENT__DICTIONARY;
+
+	/**
+	 * The feature id for the '<em><b>Concept</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__CONCEPT = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Return Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__RETURN_TYPE = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Input Parameter</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__INPUT_PARAMETER = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link mETACON.impl.ParameterImpl <em>Parameter</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mETACON.impl.ParameterImpl
+	 * @see mETACON.impl.METACONPackageImpl#getParameter()
+	 * @generated
+	 */
+	int PARAMETER = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__NAME = ELEMENT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Dictionary</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__DICTIONARY = ELEMENT__DICTIONARY;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__TYPE = ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__ACTION = ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Parameter</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER_OPERATION_COUNT = ELEMENT_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link mETACON.Visibility <em>Visibility</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -303,7 +449,7 @@ public interface METACONPackage extends EPackage {
 	 * @see mETACON.impl.METACONPackageImpl#getVisibility()
 	 * @generated
 	 */
-	int VISIBILITY = 4;
+	int VISIBILITY = 6;
 
 	/**
 	 * Returns the meta object for class '{@link mETACON.Element <em>Element</em>}'.
@@ -370,6 +516,17 @@ public interface METACONPackage extends EPackage {
 	EReference getConcept_OwnedProperty();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link mETACON.Concept#getOwnedAction <em>Owned Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Owned Action</em>'.
+	 * @see mETACON.Concept#getOwnedAction()
+	 * @see #getConcept()
+	 * @generated
+	 */
+	EReference getConcept_OwnedAction();
+
+	/**
 	 * Returns the meta object for class '{@link mETACON.Property <em>Property</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -432,6 +589,81 @@ public interface METACONPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDictionary_Element();
+
+	/**
+	 * Returns the meta object for class '{@link mETACON.Action <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Action</em>'.
+	 * @see mETACON.Action
+	 * @generated
+	 */
+	EClass getAction();
+
+	/**
+	 * Returns the meta object for the container reference '{@link mETACON.Action#getConcept <em>Concept</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Concept</em>'.
+	 * @see mETACON.Action#getConcept()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EReference getAction_Concept();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mETACON.Action#getReturnType <em>Return Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Return Type</em>'.
+	 * @see mETACON.Action#getReturnType()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_ReturnType();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link mETACON.Action#getInputParameter <em>Input Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Input Parameter</em>'.
+	 * @see mETACON.Action#getInputParameter()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EReference getAction_InputParameter();
+
+	/**
+	 * Returns the meta object for class '{@link mETACON.Parameter <em>Parameter</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Parameter</em>'.
+	 * @see mETACON.Parameter
+	 * @generated
+	 */
+	EClass getParameter();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mETACON.Parameter#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see mETACON.Parameter#getType()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Type();
+
+	/**
+	 * Returns the meta object for the container reference '{@link mETACON.Parameter#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Action</em>'.
+	 * @see mETACON.Parameter#getAction()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EReference getParameter_Action();
 
 	/**
 	 * Returns the meta object for enum '{@link mETACON.Visibility <em>Visibility</em>}'.
@@ -519,6 +751,14 @@ public interface METACONPackage extends EPackage {
 		EReference CONCEPT__OWNED_PROPERTY = eINSTANCE.getConcept_OwnedProperty();
 
 		/**
+		 * The meta object literal for the '<em><b>Owned Action</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONCEPT__OWNED_ACTION = eINSTANCE.getConcept_OwnedAction();
+
+		/**
 		 * The meta object literal for the '{@link mETACON.impl.PropertyImpl <em>Property</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -569,6 +809,66 @@ public interface METACONPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DICTIONARY__ELEMENT = eINSTANCE.getDictionary_Element();
+
+		/**
+		 * The meta object literal for the '{@link mETACON.impl.ActionImpl <em>Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mETACON.impl.ActionImpl
+		 * @see mETACON.impl.METACONPackageImpl#getAction()
+		 * @generated
+		 */
+		EClass ACTION = eINSTANCE.getAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Concept</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION__CONCEPT = eINSTANCE.getAction_Concept();
+
+		/**
+		 * The meta object literal for the '<em><b>Return Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__RETURN_TYPE = eINSTANCE.getAction_ReturnType();
+
+		/**
+		 * The meta object literal for the '<em><b>Input Parameter</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION__INPUT_PARAMETER = eINSTANCE.getAction_InputParameter();
+
+		/**
+		 * The meta object literal for the '{@link mETACON.impl.ParameterImpl <em>Parameter</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mETACON.impl.ParameterImpl
+		 * @see mETACON.impl.METACONPackageImpl#getParameter()
+		 * @generated
+		 */
+		EClass PARAMETER = eINSTANCE.getParameter();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__TYPE = eINSTANCE.getParameter_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PARAMETER__ACTION = eINSTANCE.getParameter_Action();
 
 		/**
 		 * The meta object literal for the '{@link mETACON.Visibility <em>Visibility</em>}' enum.

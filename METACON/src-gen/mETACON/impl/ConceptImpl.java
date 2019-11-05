@@ -4,6 +4,7 @@ package mETACON.impl;
 
 import java.util.Collection;
 
+import mETACON.Action;
 import mETACON.Concept;
 import mETACON.METACONPackage;
 import mETACON.Property;
@@ -32,6 +33,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link mETACON.impl.ConceptImpl#getVis <em>Vis</em>}</li>
  *   <li>{@link mETACON.impl.ConceptImpl#getOwnedProperty <em>Owned Property</em>}</li>
+ *   <li>{@link mETACON.impl.ConceptImpl#getOwnedAction <em>Owned Action</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +68,16 @@ public class ConceptImpl extends ElementImpl implements Concept {
 	 * @ordered
 	 */
 	protected EList<Property> ownedProperty;
+
+	/**
+	 * The cached value of the '{@link #getOwnedAction() <em>Owned Action</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOwnedAction()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Action> ownedAction;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,12 +140,28 @@ public class ConceptImpl extends ElementImpl implements Concept {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
+	public EList<Action> getOwnedAction() {
+		if (ownedAction == null) {
+			ownedAction = new EObjectContainmentWithInverseEList<Action>(Action.class, this,
+					METACONPackage.CONCEPT__OWNED_ACTION, METACONPackage.ACTION__CONCEPT);
+		}
+		return ownedAction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case METACONPackage.CONCEPT__OWNED_PROPERTY:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedProperty()).basicAdd(otherEnd, msgs);
+		case METACONPackage.CONCEPT__OWNED_ACTION:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedAction()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -148,6 +176,8 @@ public class ConceptImpl extends ElementImpl implements Concept {
 		switch (featureID) {
 		case METACONPackage.CONCEPT__OWNED_PROPERTY:
 			return ((InternalEList<?>) getOwnedProperty()).basicRemove(otherEnd, msgs);
+		case METACONPackage.CONCEPT__OWNED_ACTION:
+			return ((InternalEList<?>) getOwnedAction()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -164,6 +194,8 @@ public class ConceptImpl extends ElementImpl implements Concept {
 			return getVis();
 		case METACONPackage.CONCEPT__OWNED_PROPERTY:
 			return getOwnedProperty();
+		case METACONPackage.CONCEPT__OWNED_ACTION:
+			return getOwnedAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -184,6 +216,10 @@ public class ConceptImpl extends ElementImpl implements Concept {
 			getOwnedProperty().clear();
 			getOwnedProperty().addAll((Collection<? extends Property>) newValue);
 			return;
+		case METACONPackage.CONCEPT__OWNED_ACTION:
+			getOwnedAction().clear();
+			getOwnedAction().addAll((Collection<? extends Action>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -202,6 +238,9 @@ public class ConceptImpl extends ElementImpl implements Concept {
 		case METACONPackage.CONCEPT__OWNED_PROPERTY:
 			getOwnedProperty().clear();
 			return;
+		case METACONPackage.CONCEPT__OWNED_ACTION:
+			getOwnedAction().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -218,6 +257,8 @@ public class ConceptImpl extends ElementImpl implements Concept {
 			return vis != VIS_EDEFAULT;
 		case METACONPackage.CONCEPT__OWNED_PROPERTY:
 			return ownedProperty != null && !ownedProperty.isEmpty();
+		case METACONPackage.CONCEPT__OWNED_ACTION:
+			return ownedAction != null && !ownedAction.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

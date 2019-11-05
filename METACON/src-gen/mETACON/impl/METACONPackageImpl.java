@@ -2,11 +2,13 @@
  */
 package mETACON.impl;
 
+import mETACON.Action;
 import mETACON.Concept;
 import mETACON.Dictionary;
 import mETACON.Element;
 import mETACON.METACONFactory;
 import mETACON.METACONPackage;
+import mETACON.Parameter;
 import mETACON.Property;
 import mETACON.Visibility;
 
@@ -52,6 +54,20 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * @generated
 	 */
 	private EClass dictionaryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass actionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass parameterEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,6 +206,16 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * @generated
 	 */
 	@Override
+	public EReference getConcept_OwnedAction() {
+		return (EReference) conceptEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EClass getProperty() {
 		return propertyEClass;
 	}
@@ -250,6 +276,76 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * @generated
 	 */
 	@Override
+	public EClass getAction() {
+		return actionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAction_Concept() {
+		return (EReference) actionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getAction_ReturnType() {
+		return (EAttribute) actionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getAction_InputParameter() {
+		return (EReference) actionEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EClass getParameter() {
+		return parameterEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getParameter_Type() {
+		return (EAttribute) parameterEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EReference getParameter_Action() {
+		return (EReference) parameterEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getVisibility() {
 		return visibilityEEnum;
 	}
@@ -291,6 +387,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 		conceptEClass = createEClass(CONCEPT);
 		createEAttribute(conceptEClass, CONCEPT__VIS);
 		createEReference(conceptEClass, CONCEPT__OWNED_PROPERTY);
+		createEReference(conceptEClass, CONCEPT__OWNED_ACTION);
 
 		propertyEClass = createEClass(PROPERTY);
 		createEAttribute(propertyEClass, PROPERTY__VALUE);
@@ -299,6 +396,15 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 
 		dictionaryEClass = createEClass(DICTIONARY);
 		createEReference(dictionaryEClass, DICTIONARY__ELEMENT);
+
+		actionEClass = createEClass(ACTION);
+		createEReference(actionEClass, ACTION__CONCEPT);
+		createEAttribute(actionEClass, ACTION__RETURN_TYPE);
+		createEReference(actionEClass, ACTION__INPUT_PARAMETER);
+
+		parameterEClass = createEClass(PARAMETER);
+		createEAttribute(parameterEClass, PARAMETER__TYPE);
+		createEReference(parameterEClass, PARAMETER__ACTION);
 
 		// Create enums
 		visibilityEEnum = createEEnum(VISIBILITY);
@@ -336,6 +442,8 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 		conceptEClass.getESuperTypes().add(this.getElement());
 		propertyEClass.getESuperTypes().add(this.getElement());
 		dictionaryEClass.getESuperTypes().add(this.getElement());
+		actionEClass.getESuperTypes().add(this.getElement());
+		parameterEClass.getESuperTypes().add(this.getElement());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(elementEClass, Element.class, "Element", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -351,6 +459,9 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 		initEReference(getConcept_OwnedProperty(), this.getProperty(), this.getProperty_Concept(), "ownedProperty",
 				null, 0, -1, Concept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConcept_OwnedAction(), this.getAction(), this.getAction_Concept(), "ownedAction", null, 0, -1,
+				Concept.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(propertyEClass, Property.class, "Property", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -366,6 +477,24 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDictionary_Element(), this.getElement(), this.getElement_Dictionary(), "element", null, 0, -1,
 				Dictionary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAction_Concept(), this.getConcept(), this.getConcept_OwnedAction(), "concept", null, 0, 1,
+				Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getAction_ReturnType(), ecorePackage.getEString(), "returnType", null, 0, 1, Action.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getAction_InputParameter(), this.getParameter(), this.getParameter_Action(), "inputParameter",
+				null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getParameter_Type(), ecorePackage.getEString(), "type", null, 0, 1, Parameter.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getParameter_Action(), this.getAction(), this.getAction_InputParameter(), "action", null, 0, 1,
+				Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals

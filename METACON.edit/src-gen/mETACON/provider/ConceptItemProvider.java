@@ -80,6 +80,7 @@ public class ConceptItemProvider extends ElementItemProvider {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(METACONPackage.Literals.CONCEPT__OWNED_PROPERTY);
+			childrenFeatures.add(METACONPackage.Literals.CONCEPT__OWNED_ACTION);
 		}
 		return childrenFeatures;
 	}
@@ -147,6 +148,7 @@ public class ConceptItemProvider extends ElementItemProvider {
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		case METACONPackage.CONCEPT__OWNED_PROPERTY:
+		case METACONPackage.CONCEPT__OWNED_ACTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -166,6 +168,9 @@ public class ConceptItemProvider extends ElementItemProvider {
 
 		newChildDescriptors.add(createChildParameter(METACONPackage.Literals.CONCEPT__OWNED_PROPERTY,
 				METACONFactory.eINSTANCE.createProperty()));
+
+		newChildDescriptors.add(createChildParameter(METACONPackage.Literals.CONCEPT__OWNED_ACTION,
+				METACONFactory.eINSTANCE.createAction()));
 	}
 
 }

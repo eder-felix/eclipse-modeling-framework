@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link mETACON.Concept#getVis <em>Vis</em>}</li>
  *   <li>{@link mETACON.Concept#getOwnedProperty <em>Owned Property</em>}</li>
+ *   <li>{@link mETACON.Concept#getOwnedAction <em>Owned Action</em>}</li>
  * </ul>
  *
  * @see mETACON.METACONPackage#getConcept()
@@ -68,5 +69,19 @@ public interface Concept extends Element {
 	 * @generated
 	 */
 	EList<Property> getOwnedProperty();
+
+	/**
+	 * Returns the value of the '<em><b>Owned Action</b></em>' containment reference list.
+	 * The list contents are of type {@link mETACON.Action}.
+	 * It is bidirectional and its opposite is '{@link mETACON.Action#getConcept <em>Concept</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Owned Action</em>' containment reference list.
+	 * @see mETACON.METACONPackage#getConcept_OwnedAction()
+	 * @see mETACON.Action#getConcept
+	 * @model opposite="concept" containment="true"
+	 * @generated
+	 */
+	EList<Action> getOwnedAction();
 
 } // Concept

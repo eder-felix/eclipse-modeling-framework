@@ -20,6 +20,7 @@
     <genClasses ecoreClass="mETACON.ecore#//Concept">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Concept/vis"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mETACON.ecore#//Concept/ownedProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mETACON.ecore#//Concept/ownedAction"/>
     </genClasses>
     <genClasses ecoreClass="mETACON.ecore#//Property">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Property/value"/>
@@ -28,6 +29,15 @@
     </genClasses>
     <genClasses ecoreClass="mETACON.ecore#//Dictionary">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mETACON.ecore#//Dictionary/element"/>
+    </genClasses>
+    <genClasses ecoreClass="mETACON.ecore#//Action">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mETACON.ecore#//Action/concept"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Action/returnType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mETACON.ecore#//Action/inputParameter"/>
+    </genClasses>
+    <genClasses ecoreClass="mETACON.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Parameter/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mETACON.ecore#//Parameter/action"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
