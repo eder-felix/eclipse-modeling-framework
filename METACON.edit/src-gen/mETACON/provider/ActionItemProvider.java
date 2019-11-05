@@ -16,7 +16,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -48,7 +47,6 @@ public class ActionItemProvider extends ElementItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addConceptPropertyDescriptor(object);
-			addReturnTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -69,22 +67,6 @@ public class ActionItemProvider extends ElementItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Return Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addReturnTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Action_returnType_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Action_returnType_feature",
-								"_UI_Action_type"),
-						METACONPackage.Literals.ACTION__RETURN_TYPE, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -96,7 +78,7 @@ public class ActionItemProvider extends ElementItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(METACONPackage.Literals.ACTION__INPUT_PARAMETER);
+			childrenFeatures.add(METACONPackage.Literals.ACTION__OWNED_PARAMETER);
 		}
 		return childrenFeatures;
 	}
@@ -160,10 +142,7 @@ public class ActionItemProvider extends ElementItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Action.class)) {
-		case METACONPackage.ACTION__RETURN_TYPE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		case METACONPackage.ACTION__INPUT_PARAMETER:
+		case METACONPackage.ACTION__OWNED_PARAMETER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -181,7 +160,7 @@ public class ActionItemProvider extends ElementItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(METACONPackage.Literals.ACTION__INPUT_PARAMETER,
+		newChildDescriptors.add(createChildParameter(METACONPackage.Literals.ACTION__OWNED_PARAMETER,
 				METACONFactory.eINSTANCE.createParameter()));
 	}
 

@@ -82,6 +82,8 @@ public class METACONFactoryImpl extends EFactoryImpl implements METACONFactory {
 		switch (eDataType.getClassifierID()) {
 		case METACONPackage.VISIBILITY:
 			return createVisibilityFromString(eDataType, initialValue);
+		case METACONPackage.DIRECTION:
+			return createDirectionFromString(eDataType, initialValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -97,6 +99,8 @@ public class METACONFactoryImpl extends EFactoryImpl implements METACONFactory {
 		switch (eDataType.getClassifierID()) {
 		case METACONPackage.VISIBILITY:
 			return convertVisibilityToString(eDataType, instanceValue);
+		case METACONPackage.DIRECTION:
+			return convertDirectionToString(eDataType, instanceValue);
 		default:
 			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -176,6 +180,28 @@ public class METACONFactoryImpl extends EFactoryImpl implements METACONFactory {
 	 * @generated
 	 */
 	public String convertVisibilityToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Direction createDirectionFromString(EDataType eDataType, String initialValue) {
+		Direction result = Direction.get(initialValue);
+		if (result == null)
+			throw new IllegalArgumentException(
+					"The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDirectionToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

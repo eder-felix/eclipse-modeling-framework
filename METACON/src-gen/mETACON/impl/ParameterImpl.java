@@ -3,6 +3,7 @@
 package mETACON.impl;
 
 import mETACON.Action;
+import mETACON.Direction;
 import mETACON.METACONPackage;
 import mETACON.Parameter;
 
@@ -26,6 +27,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link mETACON.impl.ParameterImpl#getType <em>Type</em>}</li>
  *   <li>{@link mETACON.impl.ParameterImpl#getAction <em>Action</em>}</li>
+ *   <li>{@link mETACON.impl.ParameterImpl#getDirection <em>Direction</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +52,26 @@ public class ParameterImpl extends ElementImpl implements Parameter {
 	 * @ordered
 	 */
 	protected String type = TYPE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDirection()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Direction DIRECTION_EDEFAULT = Direction.CIN;
+
+	/**
+	 * The cached value of the '{@link #getDirection() <em>Direction</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDirection()
+	 * @generated
+	 * @ordered
+	 */
+	protected Direction direction = DIRECTION_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -130,7 +152,7 @@ public class ParameterImpl extends ElementImpl implements Parameter {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newAction != null)
-				msgs = ((InternalEObject) newAction).eInverseAdd(this, METACONPackage.ACTION__INPUT_PARAMETER,
+				msgs = ((InternalEObject) newAction).eInverseAdd(this, METACONPackage.ACTION__OWNED_PARAMETER,
 						Action.class, msgs);
 			msgs = basicSetAction(newAction, msgs);
 			if (msgs != null)
@@ -138,6 +160,30 @@ public class ParameterImpl extends ElementImpl implements Parameter {
 		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, METACONPackage.PARAMETER__ACTION, newAction,
 					newAction));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Direction getDirection() {
+		return direction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setDirection(Direction newDirection) {
+		Direction oldDirection = direction;
+		direction = newDirection == null ? DIRECTION_EDEFAULT : newDirection;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, METACONPackage.PARAMETER__DIRECTION, oldDirection,
+					direction));
 	}
 
 	/**
@@ -179,7 +225,7 @@ public class ParameterImpl extends ElementImpl implements Parameter {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case METACONPackage.PARAMETER__ACTION:
-			return eInternalContainer().eInverseRemove(this, METACONPackage.ACTION__INPUT_PARAMETER, Action.class,
+			return eInternalContainer().eInverseRemove(this, METACONPackage.ACTION__OWNED_PARAMETER, Action.class,
 					msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
@@ -197,6 +243,8 @@ public class ParameterImpl extends ElementImpl implements Parameter {
 			return getType();
 		case METACONPackage.PARAMETER__ACTION:
 			return getAction();
+		case METACONPackage.PARAMETER__DIRECTION:
+			return getDirection();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -214,6 +262,9 @@ public class ParameterImpl extends ElementImpl implements Parameter {
 			return;
 		case METACONPackage.PARAMETER__ACTION:
 			setAction((Action) newValue);
+			return;
+		case METACONPackage.PARAMETER__DIRECTION:
+			setDirection((Direction) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -233,6 +284,9 @@ public class ParameterImpl extends ElementImpl implements Parameter {
 		case METACONPackage.PARAMETER__ACTION:
 			setAction((Action) null);
 			return;
+		case METACONPackage.PARAMETER__DIRECTION:
+			setDirection(DIRECTION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -249,6 +303,8 @@ public class ParameterImpl extends ElementImpl implements Parameter {
 			return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 		case METACONPackage.PARAMETER__ACTION:
 			return getAction() != null;
+		case METACONPackage.PARAMETER__DIRECTION:
+			return direction != DIRECTION_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -266,6 +322,8 @@ public class ParameterImpl extends ElementImpl implements Parameter {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (type: ");
 		result.append(type);
+		result.append(", direction: ");
+		result.append(direction);
 		result.append(')');
 		return result.toString();
 	}

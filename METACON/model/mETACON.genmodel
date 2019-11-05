@@ -13,6 +13,12 @@
       <genEnumLiterals ecoreEnumLiteral="mETACON.ecore#//Visibility/cp_public"/>
       <genEnumLiterals ecoreEnumLiteral="mETACON.ecore#//Visibility/cp_private"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mETACON.ecore#//Direction">
+      <genEnumLiterals ecoreEnumLiteral="mETACON.ecore#//Direction/c_in"/>
+      <genEnumLiterals ecoreEnumLiteral="mETACON.ecore#//Direction/c_out"/>
+      <genEnumLiterals ecoreEnumLiteral="mETACON.ecore#//Direction/c_inout"/>
+      <genEnumLiterals ecoreEnumLiteral="mETACON.ecore#//Direction/c_return"/>
+    </genEnums>
     <genClasses ecoreClass="mETACON.ecore#//Element">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Element/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mETACON.ecore#//Element/dictionary"/>
@@ -32,12 +38,12 @@
     </genClasses>
     <genClasses ecoreClass="mETACON.ecore#//Action">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mETACON.ecore#//Action/concept"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Action/returnType"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mETACON.ecore#//Action/inputParameter"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mETACON.ecore#//Action/ownedParameter"/>
     </genClasses>
     <genClasses ecoreClass="mETACON.ecore#//Parameter">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Parameter/type"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mETACON.ecore#//Parameter/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mETACON.ecore#//Parameter/direction"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

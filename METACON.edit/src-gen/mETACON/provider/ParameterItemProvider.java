@@ -46,6 +46,7 @@ public class ParameterItemProvider extends ElementItemProvider {
 
 			addTypePropertyDescriptor(object);
 			addActionPropertyDescriptor(object);
+			addDirectionPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -79,6 +80,22 @@ public class ParameterItemProvider extends ElementItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_Parameter_action_feature",
 								"_UI_Parameter_type"),
 						METACONPackage.Literals.PARAMETER__ACTION, true, false, true, null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Direction feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addDirectionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_Parameter_direction_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Parameter_direction_feature",
+								"_UI_Parameter_type"),
+						METACONPackage.Literals.PARAMETER__DIRECTION, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -128,6 +145,7 @@ public class ParameterItemProvider extends ElementItemProvider {
 
 		switch (notification.getFeatureID(Parameter.class)) {
 		case METACONPackage.PARAMETER__TYPE:
+		case METACONPackage.PARAMETER__DIRECTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

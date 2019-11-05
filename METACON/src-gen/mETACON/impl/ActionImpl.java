@@ -32,42 +32,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link mETACON.impl.ActionImpl#getConcept <em>Concept</em>}</li>
- *   <li>{@link mETACON.impl.ActionImpl#getReturnType <em>Return Type</em>}</li>
- *   <li>{@link mETACON.impl.ActionImpl#getInputParameter <em>Input Parameter</em>}</li>
+ *   <li>{@link mETACON.impl.ActionImpl#getOwnedParameter <em>Owned Parameter</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class ActionImpl extends ElementImpl implements Action {
 	/**
-	 * The default value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
+	 * The cached value of the '{@link #getOwnedParameter() <em>Owned Parameter</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getReturnType()
+	 * @see #getOwnedParameter()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String RETURN_TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReturnType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String returnType = RETURN_TYPE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getInputParameter() <em>Input Parameter</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getInputParameter()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Parameter> inputParameter;
+	protected EList<Parameter> ownedParameter;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,36 +120,12 @@ public class ActionImpl extends ElementImpl implements Action {
 	 * @generated
 	 */
 	@Override
-	public String getReturnType() {
-		return returnType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void setReturnType(String newReturnType) {
-		String oldReturnType = returnType;
-		returnType = newReturnType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, METACONPackage.ACTION__RETURN_TYPE, oldReturnType,
-					returnType));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EList<Parameter> getInputParameter() {
-		if (inputParameter == null) {
-			inputParameter = new EObjectContainmentWithInverseEList<Parameter>(Parameter.class, this,
-					METACONPackage.ACTION__INPUT_PARAMETER, METACONPackage.PARAMETER__ACTION);
+	public EList<Parameter> getOwnedParameter() {
+		if (ownedParameter == null) {
+			ownedParameter = new EObjectContainmentWithInverseEList<Parameter>(Parameter.class, this,
+					METACONPackage.ACTION__OWNED_PARAMETER, METACONPackage.PARAMETER__ACTION);
 		}
-		return inputParameter;
+		return ownedParameter;
 	}
 
 	/**
@@ -186,8 +141,8 @@ public class ActionImpl extends ElementImpl implements Action {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			return basicSetConcept((Concept) otherEnd, msgs);
-		case METACONPackage.ACTION__INPUT_PARAMETER:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getInputParameter()).basicAdd(otherEnd, msgs);
+		case METACONPackage.ACTION__OWNED_PARAMETER:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOwnedParameter()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -202,8 +157,8 @@ public class ActionImpl extends ElementImpl implements Action {
 		switch (featureID) {
 		case METACONPackage.ACTION__CONCEPT:
 			return basicSetConcept(null, msgs);
-		case METACONPackage.ACTION__INPUT_PARAMETER:
-			return ((InternalEList<?>) getInputParameter()).basicRemove(otherEnd, msgs);
+		case METACONPackage.ACTION__OWNED_PARAMETER:
+			return ((InternalEList<?>) getOwnedParameter()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -232,10 +187,8 @@ public class ActionImpl extends ElementImpl implements Action {
 		switch (featureID) {
 		case METACONPackage.ACTION__CONCEPT:
 			return getConcept();
-		case METACONPackage.ACTION__RETURN_TYPE:
-			return getReturnType();
-		case METACONPackage.ACTION__INPUT_PARAMETER:
-			return getInputParameter();
+		case METACONPackage.ACTION__OWNED_PARAMETER:
+			return getOwnedParameter();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,12 +205,9 @@ public class ActionImpl extends ElementImpl implements Action {
 		case METACONPackage.ACTION__CONCEPT:
 			setConcept((Concept) newValue);
 			return;
-		case METACONPackage.ACTION__RETURN_TYPE:
-			setReturnType((String) newValue);
-			return;
-		case METACONPackage.ACTION__INPUT_PARAMETER:
-			getInputParameter().clear();
-			getInputParameter().addAll((Collection<? extends Parameter>) newValue);
+		case METACONPackage.ACTION__OWNED_PARAMETER:
+			getOwnedParameter().clear();
+			getOwnedParameter().addAll((Collection<? extends Parameter>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -274,11 +224,8 @@ public class ActionImpl extends ElementImpl implements Action {
 		case METACONPackage.ACTION__CONCEPT:
 			setConcept((Concept) null);
 			return;
-		case METACONPackage.ACTION__RETURN_TYPE:
-			setReturnType(RETURN_TYPE_EDEFAULT);
-			return;
-		case METACONPackage.ACTION__INPUT_PARAMETER:
-			getInputParameter().clear();
+		case METACONPackage.ACTION__OWNED_PARAMETER:
+			getOwnedParameter().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -294,29 +241,10 @@ public class ActionImpl extends ElementImpl implements Action {
 		switch (featureID) {
 		case METACONPackage.ACTION__CONCEPT:
 			return getConcept() != null;
-		case METACONPackage.ACTION__RETURN_TYPE:
-			return RETURN_TYPE_EDEFAULT == null ? returnType != null : !RETURN_TYPE_EDEFAULT.equals(returnType);
-		case METACONPackage.ACTION__INPUT_PARAMETER:
-			return inputParameter != null && !inputParameter.isEmpty();
+		case METACONPackage.ACTION__OWNED_PARAMETER:
+			return ownedParameter != null && !ownedParameter.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy())
-			return super.toString();
-
-		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (returnType: ");
-		result.append(returnType);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ActionImpl

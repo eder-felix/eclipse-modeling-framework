@@ -5,6 +5,7 @@ package mETACON.impl;
 import mETACON.Action;
 import mETACON.Concept;
 import mETACON.Dictionary;
+import mETACON.Direction;
 import mETACON.Element;
 import mETACON.METACONFactory;
 import mETACON.METACONPackage;
@@ -75,6 +76,13 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * @generated
 	 */
 	private EEnum visibilityEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum directionEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -296,18 +304,8 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getAction_ReturnType() {
-		return (EAttribute) actionEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getAction_InputParameter() {
-		return (EReference) actionEClass.getEStructuralFeatures().get(2);
+	public EReference getAction_OwnedParameter() {
+		return (EReference) actionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -346,8 +344,28 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getParameter_Direction() {
+		return (EAttribute) parameterEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EEnum getVisibility() {
 		return visibilityEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getDirection() {
+		return directionEEnum;
 	}
 
 	/**
@@ -399,15 +417,16 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 
 		actionEClass = createEClass(ACTION);
 		createEReference(actionEClass, ACTION__CONCEPT);
-		createEAttribute(actionEClass, ACTION__RETURN_TYPE);
-		createEReference(actionEClass, ACTION__INPUT_PARAMETER);
+		createEReference(actionEClass, ACTION__OWNED_PARAMETER);
 
 		parameterEClass = createEClass(PARAMETER);
 		createEAttribute(parameterEClass, PARAMETER__TYPE);
 		createEReference(parameterEClass, PARAMETER__ACTION);
+		createEAttribute(parameterEClass, PARAMETER__DIRECTION);
 
 		// Create enums
 		visibilityEEnum = createEEnum(VISIBILITY);
+		directionEEnum = createEEnum(DIRECTION);
 	}
 
 	/**
@@ -483,9 +502,7 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 		initEReference(getAction_Concept(), this.getConcept(), this.getConcept_OwnedAction(), "concept", null, 0, 1,
 				Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAction_ReturnType(), ecorePackage.getEString(), "returnType", null, 0, 1, Action.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAction_InputParameter(), this.getParameter(), this.getParameter_Action(), "inputParameter",
+		initEReference(getAction_OwnedParameter(), this.getParameter(), this.getParameter_Action(), "ownedParameter",
 				null, 0, -1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -493,14 +510,22 @@ public class METACONPackageImpl extends EPackageImpl implements METACONPackage {
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getParameter_Type(), ecorePackage.getEString(), "type", null, 0, 1, Parameter.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getParameter_Action(), this.getAction(), this.getAction_InputParameter(), "action", null, 0, 1,
+		initEReference(getParameter_Action(), this.getAction(), this.getAction_OwnedParameter(), "action", null, 0, 1,
 				Parameter.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getParameter_Direction(), this.getDirection(), "direction", null, 0, 1, Parameter.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(visibilityEEnum, Visibility.class, "Visibility");
 		addEEnumLiteral(visibilityEEnum, Visibility.CP_PUBLIC);
 		addEEnumLiteral(visibilityEEnum, Visibility.CP_PRIVATE);
+
+		initEEnum(directionEEnum, Direction.class, "Direction");
+		addEEnumLiteral(directionEEnum, Direction.CIN);
+		addEEnumLiteral(directionEEnum, Direction.COUT);
+		addEEnumLiteral(directionEEnum, Direction.CINOUT);
+		addEEnumLiteral(directionEEnum, Direction.CRETURN);
 
 		// Create resource
 		createResource(eNS_URI);

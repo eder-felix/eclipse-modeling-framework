@@ -342,22 +342,13 @@ public interface METACONPackage extends EPackage {
 	int ACTION__CONCEPT = ELEMENT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Return Type</b></em>' attribute.
+	 * The feature id for the '<em><b>Owned Parameter</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__RETURN_TYPE = ELEMENT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Input Parameter</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__INPUT_PARAMETER = ELEMENT_FEATURE_COUNT + 2;
+	int ACTION__OWNED_PARAMETER = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Action</em>' class.
@@ -366,7 +357,7 @@ public interface METACONPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
+	int ACTION_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -424,13 +415,22 @@ public interface METACONPackage extends EPackage {
 	int PARAMETER__ACTION = ELEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Direction</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PARAMETER__DIRECTION = ELEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Parameter</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PARAMETER_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 2;
+	int PARAMETER_FEATURE_COUNT = ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Parameter</em>' class.
@@ -450,6 +450,16 @@ public interface METACONPackage extends EPackage {
 	 * @generated
 	 */
 	int VISIBILITY = 6;
+
+	/**
+	 * The meta object id for the '{@link mETACON.Direction <em>Direction</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mETACON.Direction
+	 * @see mETACON.impl.METACONPackageImpl#getDirection()
+	 * @generated
+	 */
+	int DIRECTION = 7;
 
 	/**
 	 * Returns the meta object for class '{@link mETACON.Element <em>Element</em>}'.
@@ -612,26 +622,15 @@ public interface METACONPackage extends EPackage {
 	EReference getAction_Concept();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mETACON.Action#getReturnType <em>Return Type</em>}'.
+	 * Returns the meta object for the containment reference list '{@link mETACON.Action#getOwnedParameter <em>Owned Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Return Type</em>'.
-	 * @see mETACON.Action#getReturnType()
+	 * @return the meta object for the containment reference list '<em>Owned Parameter</em>'.
+	 * @see mETACON.Action#getOwnedParameter()
 	 * @see #getAction()
 	 * @generated
 	 */
-	EAttribute getAction_ReturnType();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link mETACON.Action#getInputParameter <em>Input Parameter</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Input Parameter</em>'.
-	 * @see mETACON.Action#getInputParameter()
-	 * @see #getAction()
-	 * @generated
-	 */
-	EReference getAction_InputParameter();
+	EReference getAction_OwnedParameter();
 
 	/**
 	 * Returns the meta object for class '{@link mETACON.Parameter <em>Parameter</em>}'.
@@ -666,6 +665,17 @@ public interface METACONPackage extends EPackage {
 	EReference getParameter_Action();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mETACON.Parameter#getDirection <em>Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Direction</em>'.
+	 * @see mETACON.Parameter#getDirection()
+	 * @see #getParameter()
+	 * @generated
+	 */
+	EAttribute getParameter_Direction();
+
+	/**
 	 * Returns the meta object for enum '{@link mETACON.Visibility <em>Visibility</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -674,6 +684,16 @@ public interface METACONPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getVisibility();
+
+	/**
+	 * Returns the meta object for enum '{@link mETACON.Direction <em>Direction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Direction</em>'.
+	 * @see mETACON.Direction
+	 * @generated
+	 */
+	EEnum getDirection();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -829,20 +849,12 @@ public interface METACONPackage extends EPackage {
 		EReference ACTION__CONCEPT = eINSTANCE.getAction_Concept();
 
 		/**
-		 * The meta object literal for the '<em><b>Return Type</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Owned Parameter</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ACTION__RETURN_TYPE = eINSTANCE.getAction_ReturnType();
-
-		/**
-		 * The meta object literal for the '<em><b>Input Parameter</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTION__INPUT_PARAMETER = eINSTANCE.getAction_InputParameter();
+		EReference ACTION__OWNED_PARAMETER = eINSTANCE.getAction_OwnedParameter();
 
 		/**
 		 * The meta object literal for the '{@link mETACON.impl.ParameterImpl <em>Parameter</em>}' class.
@@ -871,6 +883,14 @@ public interface METACONPackage extends EPackage {
 		EReference PARAMETER__ACTION = eINSTANCE.getParameter_Action();
 
 		/**
+		 * The meta object literal for the '<em><b>Direction</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PARAMETER__DIRECTION = eINSTANCE.getParameter_Direction();
+
+		/**
 		 * The meta object literal for the '{@link mETACON.Visibility <em>Visibility</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -879,6 +899,16 @@ public interface METACONPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum VISIBILITY = eINSTANCE.getVisibility();
+
+		/**
+		 * The meta object literal for the '{@link mETACON.Direction <em>Direction</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mETACON.Direction
+		 * @see mETACON.impl.METACONPackageImpl#getDirection()
+		 * @generated
+		 */
+		EEnum DIRECTION = eINSTANCE.getDirection();
 
 	}
 
